@@ -4,12 +4,12 @@ import TodoForm from  './todo_form';
 
 class TodoList extends React.Component {
     render () {
-        const { todos } = this.props;
+        const { todos, receiveTodo } = this.props;
         
         return (
             <>
-                <ul>{todos.map(todo => <TodoListItem todo={todo} />)}</ul>
-                <TodoForm />
+                <ul>{todos.map(todo => <TodoListItem key={ todo.id } todo={todo} />)}</ul>
+                <TodoForm receiveTodo={ receiveTodo }/>
             </>
         );
     }
